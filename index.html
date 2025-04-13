@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Negastudy</title>
+  <style>
+    /* Reset and base styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Noto Sans KR', sans-serif, Arial;
+    }
+    
+    body {
+      font-size: 14px;
+      line-height: 1.5;
+      color: #333;
+      background-color: #fff;
+    }
+    
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+    
+    img {
+      max-width: 100%;
+      height: auto;
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 15px;
+    }
+    
+    /* Top banner */
+    .top-banner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 5px 15px;
+      border-bottom: 1px solid #eee;
+    }
+    
+    .top-banner-text {
+      font-weight: 500;
+    }
+    
+    .top-banner-text .highlight {
+      color: #ff4081;
+      font-weight: 700;
+      margin-left: 8px;
+    }
+    
+    .top-banner-controls {
+      display: flex;
+      align-items: center;
+    }
+    
+    .banner-placeholder {
+      width: 96px;
+      height: 32px;
+      background-color: #f0f0f0;
+      margin: 0 8px;
+    }
+    
+    /* Header */
+    .header {
+      border-bottom: 1px solid #eee;
+      padding: 12px 0;
+    }
+    
+    .header-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .logo-container {
+      display: flex;
+      align-items: center;
+    }
+    
+    .logo-text {
+      font-size: 24px;
+      font-weight: 700;
+    }
+    
+    .logo-image {
+      width: 40px;
+      height: 40px;
+      margin-left: 8px;
+      background-color: #2196f3;
+      border-radius: 50%;
+    }
+    
+    .header-links {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .header-links a:hover {
+      color: #2196f3;
+    }
+    
+    .search-box {
+      display: flex;
+      align-items: center;
+    }
+    
+    /* Navigation */
+    .main-nav {
+      border-bottom: 1px solid #eee;
+    }
+    
+    .nav-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .nav-left {
+      display: flex;
+      align-items: center;
+    }
+    
+    .menu-icon {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      padding: 12px 0;
+      font-weight: 500;
+    }
+    
+    .nav-links a:hover {
+      color: #2196f3;
+    }
+    
+    .dropdown-indicator {
+      display: inline-block;
+      margin-left: 4px;
+      font-size: 10px;
+    }
+    
+    .nav-right {
+      display: flex;
+      gap: 16px;
+    }
+    
+    /* Notification bar */
+    .notification-bar {
+      background-color: #f3e5f5;
+      text-align: center;
+      padding: 4px 0;
+      color: #6a1b9a;
+      font-size: 12px;
+    }
+    
+    /* Main content */
+    .main-content {
+      display: flex;
+      padding: 16px 0;
+      gap: 16px;
+    }
+    
+    /* Left sidebar */
+    .left-sidebar {
+      width: 200px;
+      flex-shrink: 0;
+    }
+    
+    .profile-card {
+      background-color: #e3f2fd;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .profile-label {
+      background-color: #2196f3;
+      color: white;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+    
+    .profile-image {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background-color: #bbdefb;
+      margin: 0 auto 8px;
+    }
+    
+    .profile-name {
+      font-weight: 700;
+      font-size: 14px;
+    }
+    
+    .profile-description {
+      font-size: 11px;
+      margin-top: 8px;
+    }
+    
+    .profile-highlight {
+      font-weight: 700;
+      color: #1565c0;
+      margin-top: 4px;
+    }
+    
+    .profile-services {
+      margin-top: 16px;
+      text-align: left;
+      font-size: 11px;
+      border-top: 1px solid #bbdefb;
+      padding-top: 8px;
+    }
+    
+    .service-highlight {
+      font-weight: 700;
+      color: #1565c0;
+      margin-top: 4px;
+    }
+    
+    .sidebar-card {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+      text-align: center;
+      margin-bottom: 8px;
+    }
+    
+    .sidebar-card-small {
+      font-size: 11px;
+    }
+    
+    .sidebar-card-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    
+    .mebook {
+      color: #6a1b9a;
+    }
+    
+    .curriculum {
+      color: #2e7d32;
+    }
+    
+    .qna {
+      color: #ff6f00;
+    }
+    
+    .badge {
+      background-color: #e3f2fd;
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin-bottom: 4px;
+    }
+    
+    .ai-service {
+      color: #1565c0;
+      font-weight: 700;
+    }
+    
+    .report-box {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .report-icon {
+      width: 24px;
+      height: 24px;
+      background-color: #ffebee;
+      border-radius: 50%;
+      margin-right: 8px;
+    }
+    
+    .report-text {
+      font-size: 11px;
+    }
+    
+    .report-highlight {
+      color: #d32f2f;
+    }
+    
+    /* Main area */
+    .main-area {
+      flex: 1;
+    }
+    
+    .banner {
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 16px;
+      display: flex;
+      justify-content: space-between;
+      height: 400px; /* Adjusted height to match the image's actual dimensions */
+      position: relative;
+    }
+    
+    .banner-content {
+      padding: 24px;
+      color: white;
+      z-index: 1;
+      position: relative;
+      width: 40%; /* Reduced from 50% to give more space to the image */
+    }
+    
+    .banner-small {
+      font-size: 12px;
+    }
+    
+    .banner-title {
+      font-size: 24px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    
+    .banner-image {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 60%; /* Increased from 50% to take more horizontal space */
+      height: 100%;
+      object-fit: contain; /* Changed from cover to contain to show the full image */
+      object-position: right center; /* Center vertically, align to right */
+    }
+    
+    .purple-banner {
+      background-color: #4a148c; /* Darker purple to match the image */
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .main-promotion {
+      background-color: #00796b;
+      color: white;
+      border-radius: 8px;
+      padding: 24px;
+      position: relative;
+      margin-bottom: 16px;
+    }
+    
+    .promotion-intro {
+      text-align: center;
+      margin-bottom: 16px;
+    }
+    
+    .promotion-title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: 700;
+    }
+    
+    .promotion-subtitle {
+      text-align: center;
+      font-size: 28px;
+      font-weight: 700;
+      margin-top: 8px;
+    }
+    
+    .floating-badge {
+      position: absolute;
+      right: 80px;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: #ec407a;
+      color: white;
+      width: 128px;
+      height: 128px;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+      text-align: center;
+    }
+    
+    .badge-small {
+      font-size: 11px;
+    }
+    
+    .badge-title {
+      font-weight: 700;
+      margin: 4px 0;
+    }
+    
+    .badge-icon {
+      width: 40px;
+      height: 40px;
+      background-color: rgba(255, 255, 255, 0.3);
+      border-radius: 8px;
+      margin-top: 4px;
+    }
+    
+    .subject-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 32px;
+    }
+    
+    .subject-tab {
+      padding: 8px 16px;
+      font-size: 12px;
+    }
+    
+    .active-tab {
+      background-color: #00695c;
+      border-radius: 4px;
+    }
+    
+    .tab-content {
+      display: flex;
+      margin-bottom: 16px;
+    }
+    
+    .tab-sidebar {
+      width: 100px;
+      background-color: #e0e0e0;
+    }
+    
+    .tab-sidebar-item {
+      padding: 16px;
+      text-align: center;
+      border-bottom: 1px solid #bdbdbd;
+      font-size: 12px;
+    }
+    
+    .active-sidebar-item {
+      background-color: #fce4ec;
+    }
+    
+    .tab-main {
+      flex: 1;
+      background-color: #fce4ec;
+      padding: 24px;
+    }
+    
+    .tab-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    
+    .tab-subtitle {
+      font-size: 24px;
+      font-weight: 700;
+      color: #c2185b;
+      margin-top: 4px;
+    }
+    
+    .tab-description {
+      font-size: 12px;
+      margin-top: 16px;
+    }
+    
+    .teacher-name {
+      font-size: 18px;
+      font-weight: 700;
+      margin-top: 32px;
+    }
+    
+    .teachers-grid {
+      display: flex;
+      margin-top: 16px;
+    }
+    
+    .main-teacher {
+      width: 200px;
+      height: 300px;
+      background-color: #f8bbd0;
+      border-radius: 8px;
+      margin-right: 32px;
+    }
+    
+    .teachers-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    
+    .teacher-card {
+      text-align: center;
+    }
+    
+    .teacher-image {
+      width: 100px;
+      height: 100px;
+      background-color: #f8bbd0;
+      border-radius: 8px;
+      margin: 0 auto 8px;
+    }
+    
+    .teacher-card-name {
+      font-weight: 700;
+      font-size: 12px;
+    }
+    
+    /* Right sidebar */
+    .right-sidebar {
+      width: 200px;
+      flex-shrink: 0;
+    }
+    
+    .negapt-card {
+      background-color: #2196f3;
+      color: white;
+      padding: 16px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .negapt-title {
+      font-size: 18px;
+      font-weight: 700;
+    }
+    
+    .negapt-subjects {
+      font-size: 12px;
+    }
+    
+    .slider-indicators {
+      background-color: #f5f5f5;
+      padding: 8px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+    }
+    
+    .indicator {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background-color: #e0e0e0;
+    }
+    
+    .active-indicator {
+      background-color: #2196f3;
+    }
+    
+    .ebs-banner {
+      background-color: #e8f5e9;
+      height: 200px;
+      border-radius: 8px;
+      margin-bottom: 8px;
+    }
+    
+    .sidebar-item {
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      padding: 16px;
+      margin-bottom: 8px;
+    }
+    
+    .sidebar-title {
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+    }
+    
+    .sidebar-subtitle {
+      font-size: 12px;
+      color: #2e7d32;
+      text-align: center;
+    }
+    
+    .sidebar-badge {
+      background-color: #e3f2fd;
+      text-align: center;
+      padding: 4px;
+      border-radius: 4px;
+      font-size: 11px;
+      margin-top: 8px;
+    }
+    
+    .sidebar-text {
+      font-size: 11px;
+    }
+    
+    .sidebar-highlight {
+      font-size: 12px;
+      font-weight: 700;
+      color: #1565c0;
+    }
+    
+    .teacher-sidebar {
+      display: flex;
+    }
+    
+    .teacher-info {
+      flex: 1;
+    }
+    
+    .teacher-avatar {
+      width: 60px;
+      height: 60px;
+      background-color: #e0e0e0;
+      border-radius: 50%;
+    }
+    
+    .event-badge {
+      background-color: #fff8e1;
+      text-align: center;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+    
+    .purple-highlight {
+      color: #6a1b9a;
+    }
+    
+    .blue-badge {
+      background-color: #e3f2fd;
+      text-align: center;
+      padding: 8px;
+      border-radius: 8px;
+      font-size: 11px;
+      margin-bottom: 8px;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1200px) {
+      .floating-badge {
+        display: none;
+      }
+    }
+    
+    @media (max-width: 992px) {
+      .main-content {
+        flex-direction: column;
+      }
+      
+      .left-sidebar, .right-sidebar {
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 8px;
+      }
+      
+      .tab-content {
+        flex-direction: column;
+      }
+      
+      .tab-sidebar {
+        width: 100%;
+        display: flex;
+        overflow-x: auto;
+      }
+      
+      .tab-sidebar-item {
+        flex: 1;
+        white-space: nowrap;
+      }
+      
+      .teachers-grid {
+        flex-direction: column;
+      }
+      
+      .main-teacher {
+        width: 100%;
+        height: 200px;
+        margin-right: 0;
+        margin-bottom: 16px;
+      }
+      
+      .teachers-list {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-links, .nav-right {
+        display: none;
+      }
+      
+      .promotion-title {
+        font-size: 24px;
+      }
+      
+      .promotion-subtitle {
+        font-size: 20px;
+      }
+      
+      .subject-tabs {
+        flex-wrap: wrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Top banner -->
+  <div class="top-banner">
+    <div class="top-banner-text">
+      <span>100% 선물 경비!</span>
+      <span class="highlight">벚꽃잎을 잡아라</span>
+    </div>
+    <div class="top-banner-controls">
+      <span>◀</span>
+      <div class="banner-placeholder">
+        <!-- PLACE TOP BANNER IMAGE HERE -->
+        <!-- <img src="path/to/your/top-banner.jpg" alt="Top Banner"> -->
+      </div>
+      <span>▶</span>
+    </div>
+  </div>
+  
+  <!-- Header -->
+  <header class="header">
+    <div class="container">
+      <div class="header-content">
+        <div class="logo-container">
+          <div class="logo-text">negastudy</div>
+          <div class="logo-image">
+            <!-- PLACE negaSTUDY LOGO HERE -->
+            <!-- <img src="path/to/your/negastudy-logo.png" alt="negastudy Logo"> -->
+          </div>
+        </div>
+        <div class="header-links">
+          <a href="#">니가캔</a>
+          <span>•</span>
+          <a href="#">니가클럽 멤버십</a>
+          <span>•</span>
+          <a href="#">비타민교재</a>
+          <span>•</span>
+          <a href="#">meBOOK</a>
+          <span>•</span>
+          <a href="#">M# shop</a>
+          <span>•</span>
+          <a href="#">강좌·교재 찾기</a>
+        </div>
+        <div class="search-box">
+          <span>🔍</span>
+          <span>통합검색</span>
+        </div>
+      </div>
+    </div>
+  </header>
+  
+  <!-- Navigation -->
+  <nav class="main-nav">
+    <div class="container">
+      <div class="nav-content">
+        <div class="nav-left">
+          <div class="menu-icon">☰</div>
+          <div class="nav-links">
+            <a href="#">니가선생님 <span class="dropdown-indicator">▼</span></a>
+            <a href="#">2026 수능·내신</a>
+            <a href="#">대학별고사</a>
+            <a href="#">입시정보</a>
+            <a href="#">문제은행</a>
+          </div>
+        </div>
+        <div class="nav-right">
+          <a href="#">니가패스</a>
+          <a href="#">니가PT</a>
+          <a href="#">온라인서점</a>
+          <a href="#">의대 프리미엄관</a>
+        </div>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- Notification bar -->
+  <div class="notification-bar">
+    <span>22개 오픈</span>
+  </div>
+  
+  <!-- Main content -->
+  <div class="container">
+    <div class="main-content">
+      <!-- Left sidebar -->
+      <div class="left-sidebar">
+        <div class="profile-card">
+          <div class="profile-label">소개</div>
+          <div class="profile-image">
+            <!-- PLACE TEACHER PROFILE IMAGE HERE -->
+            <!-- <img src="path/to/your/teacher-profile.jpg" alt="Teacher Profile" class="rounded-full"> -->
+          </div>
+          <div class="profile-name">김어진</div>
+          <div class="profile-description">★전략 개정, 사탐 완강★</div>
+          <div class="profile-description">어진T 시범영상 제공</div>
+          <div class="profile-highlight">김어진 기출코드</div>
+          
+          <div class="profile-services">
+            <div>개인 맞춤, 서비스 확인</div>
+            <div class="service-highlight">알파메일 프리미엄관</div>
+          </div>
+        </div>
+        
+        <div class="sidebar-card">
+          <div class="sidebar-card-small">2026 신규 이벤트 업데이트</div>
+          <div class="sidebar-card-title mebook">meBOOK</div>
+        </div>
+        
+        <div class="sidebar-card">
+          <div class="sidebar-card-small">새로운 학습의 시작!</div>
+          <div class="sidebar-card-title curriculum">2025년 커리큘럼</div>
+        </div>
+        
+        <div class="sidebar-card">
+          <div class="sidebar-card-small">스마트한</div>
+          <div class="sidebar-card-title qna">클릭 학습 Q&A</div>
+        </div>
+        
+        <div class="sidebar-card">
+          <div class="badge">업계최초</div>
+          <div class="sidebar-card-small">인강의 새로운 패러다임</div>
+          <div class="ai-service">AI자막·화질서비스</div>
+        </div>
+        
+        <div class="sidebar-card">
+          <div class="report-box">
+            <div class="report-icon">
+              <!-- PLACE REPORT ICON HERE -->
+              <!-- <img src="path/to/your/report-icon.png" alt="Report Icon"> -->
+            </div>
+            <div class="report-text">
+              <div>솔로탈출 제보</div>
+              <div class="report-highlight">시청권 지급</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Main area -->
+      <div class="main-area">
+        <!-- Banner 1 -->
+        <div class="banner purple-banner">
+          <div class="banner-content">
+            <div class="banner-small">청결 유지와 대인관계 개선</div>
+            <div class="banner-title">김어진을 믿어봐!</div>
+          </div>
+          <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/teacher-profile1.jpg-zFspRP8JdvqE1K9VJQua5bV4Xgp0Vc.jpeg" alt="김어진 선생님" class="banner-image">
+        </div>
+        
+        <!-- Main promotion -->
+        <div class="main-promotion">
+          <div class="promotion-intro">
+            <div>대입 성공의 열쇠 내신, 니가스터디와 함께 준비해봅시다!</div>
+          </div>
+          
+          <div class="promotion-title">1학기 중간고사</div>
+          <div class="promotion-subtitle">대비특강</div>
+          
+          <!-- Floating badge -->
+          <div class="floating-badge">
+            <div class="badge-small">니가패스 수강생을 위한</div>
+            <div class="badge-title">니가클럽</div>
+            <div class="badge-title">멤버십 이벤트</div>
+            <div class="badge-icon">
+              <!-- PLACE BADGE ICON HERE -->
+              <!-- <img src="path/to/your/badge-icon.png" alt="Badge Icon"> -->
+            </div>
+          </div>
+          
+          <!-- Subject tabs -->
+          <div class="subject-tabs">
+            <div class="subject-tab active-tab">중간고사</div>
+            <div class="subject-tab">N수특강</div>
+            <div class="subject-tab">국어</div>
+            <div class="subject-tab">수학</div>
+            <div class="subject-tab">영어</div>
+            <div class="subject-tab">한국사</div>
+            <div class="subject-tab">사탐</div>
+            <div class="subject-tab">과탐</div>
+          </div>
+        </div>
+        
+        <!-- Tab content -->
+        <div class="tab-content">
+          <div class="tab-sidebar">
+            <div class="tab-sidebar-item">국어</div>
+            <div class="tab-sidebar-item">수학</div>
+            <div class="tab-sidebar-item active-sidebar-item">사회</div>
+            <div class="tab-sidebar-item">한국사</div>
+            <div class="tab-sidebar-item">영어</div>
+            <div class="tab-sidebar-item">과학</div>
+            <div class="tab-sidebar-item">대학별고사</div>
+          </div>
+          
+          <div class="tab-main">
+            <div class="tab-title">청결 유지와 대인관계 개선</div>
+            <div class="tab-subtitle">믿어봐! 해설편 & 실전편</div>
+            <div class="tab-description">찐따 탈출시켜주는 김어진 BEST 강좌</div>
+            
+            <div class="teacher-name">사회 김어진</div>
+            
+            <div class="teachers-grid">
+              <div class="main-teacher">
+                <!-- PLACE MAIN TEACHER IMAGE HERE -->
+                <!-- <img src="path/to/your/main-teacher.jpg" alt="Main Teacher" class="w-full h-full object-cover rounded-lg"> -->
+              </div>
+              
+              <div class="teachers-list">
+                <div class="teacher-card">
+                  <div class="teacher-image">
+                    <!-- PLACE TEACHER 1 IMAGE HERE -->
+                    <!-- <img src="path/to/your/teacher1.jpg" alt="Teacher 1" class="w-full h-full object-cover rounded-lg"> -->
+                  </div>
+                  <div class="teacher-card-name">김지영</div>
+                </div>
+                <div class="teacher-card">
+                  <div class="teacher-image">
+                    <!-- PLACE TEACHER 2 IMAGE HERE -->
+                    <!-- <img src="path/to/your/teacher2.jpg" alt="Teacher 2" class="w-full h-full object-cover rounded-lg"> -->
+                  </div>
+                  <div class="teacher-card-name">김기철</div>
+                </div>
+                <div class="teacher-card">
+                  <div class="teacher-image">
+                    <!-- PLACE TEACHER 3 IMAGE HERE -->
+                    <!-- <img src="path/to/your/teacher3.jpg" alt="Teacher 3" class="w-full h-full object-cover rounded-lg"> -->
+                  </div>
+                  <div class="teacher-card-name">김기훈</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Right sidebar -->
+      <div class="right-sidebar">
+        <div class="negapt-card">
+          <div>
+            <div class="negapt-title">니가PT</div>
+            <div class="negapt-subjects">국어&수학&영어</div>
+          </div>
+        </div>
+        
+        <div class="slider-indicators">
+          <div class="indicator active-indicator"></div>
+          <div class="indicator"></div>
+          <div class="indicator"></div>
+          <div class="indicator"></div>
+          <div class="indicator"></div>
+        </div>
+        
+        <div class="ebs-banner">
+          <!-- PLACE EBS BANNER IMAGE HERE -->
+          <!-- <img src="path/to/your/ebs-banner.jpg" alt="EBS Banner" class="w-full h-full object-cover rounded-lg"> -->
+        </div>
+        
+        <div class="sidebar-item">
+          <div class="sidebar-title">니가스터디</div>
+          <div class="sidebar-subtitle">교재상품권</div>
+          <div class="sidebar-badge">배송비 무료 구폰 증정</div>
+        </div>
+        
+        <div class="sidebar-item">
+          <div class="sidebar-text">이런노력도 했더니?</div>
+          <div class="sidebar-highlight">고등 대표 인강</div>
+          <div class="sidebar-highlight">니가스터디</div>
+        </div>
+        
+        <div class="sidebar-item teacher-sidebar">
+          <div class="teacher-info">
+            <div class="sidebar-highlight">비타민 &</div>
+            <div class="sidebar-highlight">CNR 특강</div>
+            <div class="sidebar-text">장인</div>
+            <div class="sidebar-text">김남중</div>
+          </div>
+          <div class="teacher-avatar">
+            <!-- PLACE TEACHER AVATAR IMAGE HERE -->
+            <!-- <img src="path/to/your/teacher-avatar.jpg" alt="Teacher Avatar" class="w-full h-full object-cover rounded-full"> -->
+          </div>
+        </div>
+        
+        <div class="event-badge">5명 무료 합격자 이벤트</div>
+        
+        <div class="sidebar-item">
+          <div class="sidebar-title purple-highlight">제 3회 니가스터디</div>
+          <div class="sidebar-title purple-highlight">아이디어 공모전</div>
+          <div class="sidebar-badge">총 상금 1천만원</div>
+        </div>
+        
+        <div class="sidebar-item">
+          <div class="sidebar-text">개념부터 꼼꼼하게</div>
+          <div class="sidebar-highlight">생기부 대백과</div>
+        </div>
+        
+        <div class="blue-badge">SKY 합격생들</div>
+        
+        <div class="sidebar-item">
+          <div>2025 디지털교과서</div>
+          <div>지금 무료 나눔 중</div>
+        </div>
+        
+        <div class="sidebar-item">
+          <div class="sidebar-highlight">니가스터디 회원 혜택</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
